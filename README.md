@@ -1,66 +1,101 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# YouQuote - API de Gestion des Citations
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![YouQuote](https://img.freepik.com/vecteurs-libre/illustration-api-design-plat_23-2149392285.jpg?t=st=1741688242~exp=1741691842~hmac=9392bfcff332a0e3d7d28801410dacacbc1226544fd9e94818ddd5641eaadcfc&w=900)
 
-## About Laravel
+## Description
+YouQuote est une API RESTful permettant de gérer des citations. Elle offre des fonctionnalités essentielles telles que la création, la lecture, la mise à jour et la suppression de citations (CRUD). De plus, elle propose des fonctionnalités avancées telles que l'obtention de citations aléatoires, le filtrage des citations en fonction de leur longueur, ainsi que le suivi de la popularité des citations les plus demandées.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+L'API intègre également des fonctionnalités bonus comme la génération d'images pour les citations populaires et une authentification sécurisée permettant aux utilisateurs de gérer leurs propres citations.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Fonctionnalités Principales
+- ✅ **Gestion des Citations (CRUD)** : Créer, lire, mettre à jour et supprimer des citations.
+- 🔄 **Citations Aléatoires** : Obtenir une ou plusieurs citations aléatoires.
+- 🎯 **Filtrage des Citations par Longueur** : Rechercher des citations en fonction du nombre de mots.
+- 📊 **Suivi de la Popularité** : Enregistrement de la fréquence d'accès des citations pour identifier les plus populaires.
 
-## Learning Laravel
+## 🎁 Fonctionnalités Bonus
+- 🖼️ **Génération d'Images** : Création d'images contenant les citations les plus populaires.
+- 🔐 **Authentification** : Gestion des utilisateurs avec JWT pour un accès sécurisé et personnalisé.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🛠️ Exigences Techniques
+- **Framework** : Laravel
+- **Base de Données** : MySQL 
+- **Génération d'Images** : Intervention Image ou une bibliothèque similaire
+- **Authentification** : JSON Web Tokens (JWT)
+- **Déploiement** : Hébergement sur un serveur Linux via AWS EC2, Azure VM, ou DigitalOcean Droplet
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 📌 Installation et Configuration
+```bash
+# Cloner le projet
+git clone https://github.com/abdelkouddousalami/YouQuote.git
+cd youQuote
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+# Installer les dépendances
+composer install
 
-### Premium Partners
+# Copier le fichier d'environnement et configurer les variables
+cp .env.example .env
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+# Générer la clé d'application
+php artisan key:generate
 
-## Contributing
+# Exécuter les migrations et seeders
+php artisan migrate --seed
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Démarrer le serveur
+php artisan serve
+```
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🚀 Déploiement
+- L'API sera accessible via une URL sécurisée.
+- Hébergement recommandé : AWS, Azure, ou DigitalOcean.
+- Utilisation d'un serveur Linux avec une configuration adaptée à Laravel.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🎓 Modalités Pédagogiques
+- **Travail individuel**
+- **Durée** : 5 jours (du 10/03/2025 au 14/03/2025, 16h00)
+- **Modalités d'évaluation** :
+  - 🕐 5 minutes : Simulation de l'application web
+  - 🕐 5 minutes : Code Review + Questions Techniques
+  - 🕐 10 minutes : Mise en situation individuelle
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📂 Livrables
+- 📌 **Code source propre** (hébergé sur GitHub)
+- 📌 **Conception UML**
+
+---
+
+## 📊 Critères de Performance
+- ✅ Implémentation des Bonnes Pratiques pour CRUD en Laravel
+- ✅ Validation des Données Entrantes
+- ✅ Utilisation des Seeders et Factories pour les Citations
+- ✅ Gestion Appropriée des Données Populaires
+
+---
+
+## 🤝 Contribuer
+Les contributions sont les bienvenues ! Veuillez suivre ces étapes :
+1. Forkez le projet 📌
+2. Créez une branche feature (`git checkout -b feature-ma-feature`) 🔄
+3. Commitez vos modifications (`git commit -m 'Ajout de ma feature'`) 💡
+4. Pushez vers la branche (`git push origin feature-ma-feature`) 🚀
+5. Ouvrez une Pull Request 📢
+
+---
+
+## 📧 Contact
+Pour toute question, veuillez contacter [abdoalami.ru@gmail.com] ou créer une issue sur le dépôt GitHub.
+
+
